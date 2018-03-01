@@ -1,12 +1,12 @@
-public class Studerende extends Bruger {
+public class Unge extends Bruger {
 
     protected String skole;
     private int klasse;
 
-    public Studerende() {
+    public Unge() {
     }
 
-    public Studerende(String fornavn, String efternavn, String telefon, String kodeord) {
+    public Unge(String fornavn, String efternavn, String telefon, String kodeord) {
         super(fornavn, efternavn, telefon, kodeord);
     }
 

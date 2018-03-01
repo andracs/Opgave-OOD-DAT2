@@ -1,10 +1,13 @@
+import ENUM.EnumKursusType;
+import ENUM.EnumUgedage;
+
 public class Kursus {
 
     private String navn;
     private EnumUgedage ugedag;
     private EnumKursusType kursusType;
     private int startTime, startMinut;
-    private Studerende[] studerendeArray;
+    private Unge[] ungeArray;
     private Underviser underviser;
     private Prøve[] prøve;
     private int maxAntalStuderende = 25;
@@ -14,27 +17,19 @@ public class Kursus {
 
         this.navn = navn;
         this.prøve = new Prøve[3];
-        studerendeArray = new Studerende[25];
+        ungeArray = new Unge[25];
 
     }
+    
+    /* Returnerer TRUE, hvis brugeren er oprettet */
+    public String tilmeldStuderende(Unge unge) {
+        // Sikre, at der ikke kan tilmeldes til flere aktiviteter på samme ugedag
 
-    public Kursus(String navn, EnumUgedage ugedag, EnumKursusType kursusType, int startTime, int startMinut, Underviser underviser, int maxAntalStuderende) {
-        this.navn = navn;
-        this.ugedag = ugedag;
-        this.kursusType = kursusType;
-        this.startTime = startTime;
-        this.startMinut = startMinut;
-        this.underviser = underviser;
-        this.prøve = prøve;
-        prøve = new Prøve[3];
-        studerendeArray = new Studerende[maxAntalStuderende];
-    }
-
-    public void tilmeldStuderende(Studerende studerende) {
         // Add user to course
-        studerendeArray[tilmeldte] = studerende;
+        ungeArray[tilmeldte] = unge;
         tilmeldte++;
-        System.out.println(studerende.getFornavn() + " " + studerende.getEfternavn() + " er oprettet på kurset " + navn + " som deltager nr " + tilmeldte + "." );
+        System.out.println(unge.getFornavn() + " " + unge.getEfternavn() + " er oprettet på kurset '" + navn + "' som deltager nr " + tilmeldte + "." );
+        return "";
     }
 
     public String getNavn() {
