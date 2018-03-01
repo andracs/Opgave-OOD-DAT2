@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class TestSystem {
 
-    protected ArrayList<Kursus> kurserArrayList = new ArrayList<Kursus>();
 
     public void init() {
 
@@ -30,6 +29,9 @@ public class TestSystem {
         keramikKursus.setUgedag(EnumUgedage.MANDAG);
         keramikKursus.setKursusType(EnumKursusType.VÆRKSTEDSFAG);
 
+        // Statusbesked
+        System.out.println("Der er " + KursusListe.kurserArrayList.size() + " kurser i systemet. ");
+
         // Opretter brugere
         Unge mikkel = new Unge("Mikkel", "Sørensen", "1", "1");
         Unge mads = new Unge("Mads", "Nielsen", "2", "2");
@@ -37,13 +39,18 @@ public class TestSystem {
         Unge mathias = new Unge("Mathias", "H", "4", "4");
         Unge sebastian = new Unge("Sebastian", "N", "5", "5");
 
-        // Tilmelder kurser
-        parkourKursus.tilmeldStuderende(mikkel);
-        parkourKursus.tilmeldStuderende(mads);
-        parkourKursus.tilmeldStuderende(thomas);
-        keramikKursus.tilmeldStuderende(mathias);
-        keramikKursus.tilmeldStuderende(sebastian);
 
+        try {
+            // Tilmelder kurser
+            parkourKursus.tilmeldStuderende(mikkel);
+                parkourKursus.tilmeldStuderende(mads);
+            parkourKursus.tilmeldStuderende(thomas);
+            keramikKursus.tilmeldStuderende(mathias);
+            keramikKursus.tilmeldStuderende(sebastian);
+        } catch (IllegalArgumentException e) {
+            //
+            System.out.println("Hov der var en fewjl, ikke alle stud blev oprettet: " + e.getLocalizedMessage());
+        }
 
     }
 

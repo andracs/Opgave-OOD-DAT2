@@ -1,5 +1,6 @@
 import ENUM.EnumKursusType;
 import ENUM.EnumUgedage;
+import com.sun.javaws.exceptions.InvalidArgumentException;
 
 public class Kursus {
 
@@ -18,12 +19,19 @@ public class Kursus {
         this.navn = navn;
         this.prøve = new Prøve[3];
         ungeArray = new Unge[25];
+        KursusListe.add(this);
 
     }
-    
+
     /* Returnerer TRUE, hvis brugeren er oprettet */
     public String tilmeldStuderende(Unge unge) {
         // Sikre, at der ikke kan tilmeldes til flere aktiviteter på samme ugedag
+        // --> Tjek, hvilke kurser (ugedage), den studerende har
+        // --> Hvis der
+
+        if (unge.getFornavn().matches("Andras")) {
+            throw new IllegalArgumentException("Mads må ikke oprettes af en eller anden grund!");
+        }
 
         // Add user to course
         ungeArray[tilmeldte] = unge;
