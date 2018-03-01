@@ -1,4 +1,4 @@
-public class Underviser extends SystemBruger {
+public class Underviser extends Bruger {
 
     public Underviser() {
     }

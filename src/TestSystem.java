@@ -18,18 +18,19 @@ public class TestSystem {
         Kursus kinesiskKursus = new Kursus("Kinesisk");
 
         parkourKursus.setNavn("Parkour for begyndere");
-        parkourKursus.setKursusType(KursusType.FYSISK_AKTIVITET);
-        parkourKursus.setUgedag(Ugedage.MANDAG);
+        parkourKursus.setKursusType(EnumKursusType.FYSISK_AKTIVITET);
+        parkourKursus.setUgedag(EnumUgedage.MANDAG);
         parkourKursus.setUnderviser(karsten);
         parkourKursus.setStartTime(18);
         parkourKursus.setStartMinut(0);
 
-
-        //parkourKursus
-
-
         // Opretter brugere
         Studerende andras = new Studerende("Andras", "Acs", "12345", "22957076");
+
+
+        // Tilmelde kurser
+        parkourKursus.tilmeldStuderende(andras);
+
     }
 
 

@@ -1,4 +1,4 @@
-package Eksempler;
+package OODEksempler;
 
 public abstract class Dyr {
     public String navn;
@@ -8,4 +8,5 @@ public abstract class Dyr {
     public Dyr(String navn) {
         this.navn = navn;
     }
+
 }

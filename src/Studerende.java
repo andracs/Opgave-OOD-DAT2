@@ -1,4 +1,4 @@
-public class Studerende extends SystemBruger {
+public class Studerende extends Bruger {
 
     protected String skole;
     private int klasse;

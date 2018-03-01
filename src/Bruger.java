@@ -1,14 +1,14 @@
-public  class SystemBruger {
+public  class Bruger {
 
     protected String fornavn;
     protected String efternavn;
     protected String telefon;
     protected String kodeord;
 
-    public SystemBruger() {
+    public Bruger() {
     }
 
-    public SystemBruger(String fornavn, String efternavn, String telefon, String kodeord) {
+    public Bruger(String fornavn, String efternavn, String telefon, String kodeord) {
         this.fornavn = fornavn;
         this.efternavn = efternavn;
         this.telefon = telefon;
