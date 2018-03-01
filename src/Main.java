@@ -24,7 +24,7 @@ public class Main extends Application {
         t.init();
 
         // Jeg udkommenterer launch, så GUI'en ikke starter
-        // launch(args);
+        launch(args);
 
     }
 }
