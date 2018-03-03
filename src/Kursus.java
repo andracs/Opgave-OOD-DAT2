@@ -1,6 +1,5 @@
 import ENUM.EnumKursusType;
 import ENUM.EnumUgedage;
-import com.sun.javaws.exceptions.InvalidArgumentException;
 
 public class Kursus {
 
@@ -25,31 +24,43 @@ public class Kursus {
 
     /* Returnerer TRUE, hvis brugeren er oprettet */
     public String tilmeldStuderende(Unge unge) {
-        // Sikre, at der ikke kan tilmeldes til flere aktiviteter på samme ugedag
-        // --> Tjek, hvilke kurser (ugedage), den studerende har
-        // --> Hvis der er...
 
-        for ( Kursus k : KursusListe.kurserArrayList)
-              {
-            System.out.println("DEBUG Kursusnavn: " + k.navn);
+        String returBesked = "";
 
-            /*if (k.ungeArray.length>0) {
-                for (Unge u : k.ungeArray) {
-                    System.out.println("DEBUG Deltagere: " + u.getFornavn() + u.getEfternavn());
+        if ((maxAntalStuderende > tilmeldte)) {
+            // Sikre, at der ikke kan tilmeldes til flere aktiviteter på samme ugedag
+            // --> Tjek, hvilke kurser (ugedage), den studerende har
+            // --> Hvis der er...
 
+            for (Kursus k : KursusListe.kurserArrayList) {
+                // System.out.println("DEBUG Kursusnavn: " + k.navn);
+                for (int i = 0; i < k.ungeArray.length; i++) {
+                    if (k.ungeArray[i] != null) {
+                        //    System.out.println("DEBUG Deltagere: " + k.ungeArray[i].getFornavn());
+                    }
                 }
-            }*/
-        }
+            }
 
-        if (unge.getFornavn().matches("Andras")) {
-            throw new IllegalArgumentException("Mads må ikke oprettes af en eller anden grund!");
-        }
+            if (unge.getFornavn().matches("Andras")) {
+                throw new IllegalArgumentException("Mads må ikke oprettes af en eller anden grund!");
+            }
 
-        // Add user to course
-        ungeArray[tilmeldte] = unge;
-        tilmeldte++;
-        System.out.println(unge.getFornavn() + " " + unge.getEfternavn() + " er oprettet på kurset '" + navn + "' som deltager nr " + tilmeldte + "." );
-        return "";
+            // Add user to course
+            // System.out.println(("#" + ugedag.ordinal()) + unge.ugedage[ugedag.ordinal()] +"  vs "+ ugedag);
+            if (unge.ugedage[ugedag.ordinal()] == null) {
+                unge.ugedage[ugedag.ordinal()] = ugedag;
+                ungeArray[tilmeldte] = unge;
+                tilmeldte++;
+                System.out.println(unge.getFornavn() + " " + unge.getEfternavn() + " er oprettet på kurset '" + navn + "' som deltager nr " + tilmeldte + ".");
+                // returBesked = unge.getFornavn() + " er nu tilmeldt " + navn;
+            } else {
+                returBesked = unge.fornavn + " kunne ikke tilmeldes til " + navn + " kursus om" + ugedag + "en, fordi han/hun allerede har en anden tilmeldning for samme ugedag.";
+            }
+        } else {
+            returBesked = unge.fornavn + " kunne ikke tilmeldes til " + navn + " kursus om" + ugedag + "en, fordi der er ikke flere pladser på denne kursus.";
+        }
+        System.out.println(returBesked);
+        return returBesked;
     }
 
     public String getNavn() {

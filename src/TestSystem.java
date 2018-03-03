@@ -26,8 +26,14 @@ public class TestSystem {
         parkourKursus.setStartTime(18);
         parkourKursus.setStartMinut(0);
 
-        keramikKursus.setUgedag(EnumUgedage.MANDAG);
+        keramikKursus.setUgedag(EnumUgedage.TIRSDAG);
         keramikKursus.setKursusType(EnumKursusType.VÆRKSTEDSFAG);
+
+        selvforsvarKursus.setUgedag(EnumUgedage.MANDAG);
+        selvforsvarKursus.setKursusType(EnumKursusType.FYSISK_AKTIVITET);
+
+        metalKursus.setUgedag(EnumUgedage.FREDAG);
+        metalKursus.setKursusType(EnumKursusType.VÆRKSTEDSFAG);
 
         // Statusbesked
         System.out.println("Der er " + KursusListe.kurserArrayList.size() + " kurser i systemet. ");
@@ -43,14 +49,19 @@ public class TestSystem {
         try {
             // Tilmelder kurser
             parkourKursus.tilmeldStuderende(mikkel);
-                parkourKursus.tilmeldStuderende(mads);
+            parkourKursus.tilmeldStuderende(mads);
             parkourKursus.tilmeldStuderende(thomas);
-            keramikKursus.tilmeldStuderende(mathias);
-            keramikKursus.tilmeldStuderende(sebastian);
+            keramikKursus.tilmeldStuderende(mikkel);
+            keramikKursus.tilmeldStuderende(mads);
+            metalKursus.tilmeldStuderende(mikkel);
+            selvforsvarKursus.tilmeldStuderende(mikkel);
         } catch (IllegalArgumentException e) {
             //
-            System.out.println("Hov der var en fewjl, ikke alle stud blev oprettet: " + e.getLocalizedMessage());
+            System.out.println("Hov der var en fejl, ikke alle stud blev oprettet: " + e.getLocalizedMessage());
         }
+
+        // Yderligere tests
+        System.out.println("Færdig. ");
 
     }
 

@@ -2,6 +2,7 @@ public class Unge extends Bruger {
 
     protected String skole;
     private int klasse;
+    protected ENUM.EnumUgedage[] ugedage = new ENUM.EnumUgedage[7];
 
     public Unge() {
     }
