@@ -4,10 +4,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.KursusTilmeldningController">
    <children>
@@ -27,11 +28,36 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Kurser">
+          <Tab text="Studernede">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutX="14.0" layoutY="14.0" prefHeight="546.0" prefWidth="756.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="Navn" />
+                              <TableColumn prefWidth="217.6666717529297" text="Telefon" />
+                            <TableColumn prefWidth="462.3333282470703" text="Kursustilmeldninger" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
             </content>
           </Tab>
+            <Tab text="Kurser">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutX="14.0" layoutY="14.0" prefHeight="546.0" prefWidth="756.0">
+                           <columns>
+                              <TableColumn prefWidth="266.0" text="Kursusnavn" />
+                              <TableColumn prefWidth="223.0" text="Underviser" />
+                              <TableColumn prefWidth="146.33334350585938" text="Lokale" />
+                              <TableColumn prefWidth="120.66665649414062" text="Ugedag" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>

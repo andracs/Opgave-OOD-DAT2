@@ -27,7 +27,19 @@ public class Kursus {
     public String tilmeldStuderende(Unge unge) {
         // Sikre, at der ikke kan tilmeldes til flere aktiviteter på samme ugedag
         // --> Tjek, hvilke kurser (ugedage), den studerende har
-        // --> Hvis der
+        // --> Hvis der er...
+
+        for ( Kursus k : KursusListe.kurserArrayList)
+              {
+            System.out.println("DEBUG Kursusnavn: " + k.navn);
+
+            /*if (k.ungeArray.length>0) {
+                for (Unge u : k.ungeArray) {
+                    System.out.println("DEBUG Deltagere: " + u.getFornavn() + u.getEfternavn());
+
+                }
+            }*/
+        }
 
         if (unge.getFornavn().matches("Andras")) {
             throw new IllegalArgumentException("Mads må ikke oprettes af en eller anden grund!");
