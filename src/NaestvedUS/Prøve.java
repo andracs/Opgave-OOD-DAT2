@@ -1,4 +1,4 @@
-import ENUM.EnumPrøveTyper;
+package NaestvedUS;
 
 public class Prøve {
 

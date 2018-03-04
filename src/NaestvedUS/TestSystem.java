@@ -1,7 +1,4 @@
-import ENUM.EnumKursusType;
-import ENUM.EnumUgedage;
-
-import java.util.ArrayList;
+package NaestvedUS;
 
 public class TestSystem {
 

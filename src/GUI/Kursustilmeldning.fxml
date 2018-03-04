@@ -10,7 +10,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.KursusTilmeldningController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.KursusTilmeldningController">
    <children>
       <TabPane layoutX="8.0" prefHeight="594.0" prefWidth="781.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -28,14 +28,14 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Studernede">
+          <Tab onSelectionChanged="#udfyldTabelStuderende" text="Studerende">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <TableView layoutX="14.0" layoutY="14.0" prefHeight="546.0" prefWidth="756.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="Navn" />
-                              <TableColumn prefWidth="217.6666717529297" text="Telefon" />
+                            <TableColumn prefWidth="75.0" text="Fornavn" />
+                              <TableColumn prefWidth="217.6666717529297" text="Efternavn" />
                             <TableColumn prefWidth="462.3333282470703" text="Kursustilmeldninger" />
                           </columns>
                         </TableView>
@@ -49,8 +49,8 @@
                         <TableView layoutX="14.0" layoutY="14.0" prefHeight="546.0" prefWidth="756.0">
                            <columns>
                               <TableColumn prefWidth="266.0" text="Kursusnavn" />
-                              <TableColumn prefWidth="223.0" text="Underviser" />
-                              <TableColumn prefWidth="146.33334350585938" text="Lokale" />
+                              <TableColumn prefWidth="223.0" text="NaestvedUS.Underviser" />
+                              <TableColumn prefWidth="146.33334350585938" text="NaestvedUS.Lokale" />
                               <TableColumn prefWidth="120.66665649414062" text="Ugedag" />
                            </columns>
                         </TableView>

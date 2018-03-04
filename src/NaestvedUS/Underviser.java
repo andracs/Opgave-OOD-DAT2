@@ -1,3 +1,5 @@
+package NaestvedUS;
+
 public class Underviser extends Bruger {
 
     public Underviser() {

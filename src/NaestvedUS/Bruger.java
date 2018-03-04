@@ -1,4 +1,6 @@
-public  class Bruger {
+package NaestvedUS;
+
+public class Bruger {
 
     protected String fornavn;
     protected String efternavn;

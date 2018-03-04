@@ -1,3 +1,4 @@
+package NaestvedUS;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        Parent root = FXMLLoader.load(getClass().getResource("GUI/Kursustilmeldning.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../GUI/Kursustilmeldning.fxml"));
         primaryStage.setTitle("Kursustilmeldning");
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
@@ -24,7 +25,7 @@ public class Main extends Application {
         t.init();
 
         // Jeg udkommenterer launch, så GUI'en ikke starter
-        // launch(args);
+         launch(args);
 
     }
 }

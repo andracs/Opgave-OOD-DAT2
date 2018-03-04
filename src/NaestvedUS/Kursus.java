@@ -1,5 +1,4 @@
-import ENUM.EnumKursusType;
-import ENUM.EnumUgedage;
+package NaestvedUS;
 
 public class Kursus {
 
