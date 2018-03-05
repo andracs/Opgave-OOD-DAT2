@@ -1,16 +1,17 @@
 package NaestvedUS;
 
-public class Unge extends Bruger {
+public class Kursist extends Bruger {
 
     protected String skole;
     private int klasse;
     protected EnumUgedage[] ugedage = new EnumUgedage[7];
 
-    public Unge() {
+    public Kursist() {
     }
 
-    public Unge(String fornavn, String efternavn, String telefon, String kodeord) {
+    public Kursist(String fornavn, String efternavn, String telefon, String kodeord) {
         super(fornavn, efternavn, telefon, kodeord);
+        KursistListe.add(this);
     }
 
     public String getSkole() {

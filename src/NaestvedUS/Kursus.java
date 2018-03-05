@@ -6,7 +6,7 @@ public class Kursus {
     private EnumUgedage ugedag;
     private EnumKursusType kursusType;
     private int startTime, startMinut;
-    private Unge[] ungeArray;
+    private Kursist[] kursistArray;
     private Underviser underviser;
     private Prøve[] prøve;
     private int maxAntalStuderende = 25;
@@ -16,13 +16,13 @@ public class Kursus {
 
         this.navn = navn;
         this.prøve = new Prøve[3];
-        ungeArray = new Unge[25];
+        kursistArray = new Kursist[25];
         KursusListe.add(this);
 
     }
 
     /* Returnerer TRUE, hvis brugeren er oprettet */
-    public String tilmeldStuderende(Unge unge) {
+    public String tilmeldStuderende(Kursist kursist) {
 
         String returBesked = "";
 
@@ -33,30 +33,30 @@ public class Kursus {
 
             for (Kursus k : KursusListe.kurserArrayList) {
                 // System.out.println("DEBUG Kursusnavn: " + k.navn);
-                for (int i = 0; i < k.ungeArray.length; i++) {
-                    if (k.ungeArray[i] != null) {
-                        //    System.out.println("DEBUG Deltagere: " + k.ungeArray[i].getFornavn());
+                for (int i = 0; i < k.kursistArray.length; i++) {
+                    if (k.kursistArray[i] != null) {
+                        //    System.out.println("DEBUG Deltagere: " + k.kursistArray[i].getFornavn());
                     }
                 }
             }
 
-            if (unge.getFornavn().matches("Andras")) {
+            if (kursist.getFornavn().matches("Andras")) {
                 throw new IllegalArgumentException("Mads må ikke oprettes af en eller anden grund!");
             }
 
             // Add user to course
-            // System.out.println(("#" + ugedag.ordinal()) + unge.ugedage[ugedag.ordinal()] +"  vs "+ ugedag);
-            if (unge.ugedage[ugedag.ordinal()] == null) {
-                unge.ugedage[ugedag.ordinal()] = ugedag;
-                ungeArray[tilmeldte] = unge;
+            // System.out.println(("#" + ugedag.ordinal()) + kursist.ugedage[ugedag.ordinal()] +"  vs "+ ugedag);
+            if (kursist.ugedage[ugedag.ordinal()] == null) {
+                kursist.ugedage[ugedag.ordinal()] = ugedag;
+                kursistArray[tilmeldte] = kursist;
                 tilmeldte++;
-                System.out.println(unge.getFornavn() + " " + unge.getEfternavn() + " er oprettet på kurset '" + navn + "' som deltager nr " + tilmeldte + ".");
-                // returBesked = unge.getFornavn() + " er nu tilmeldt " + navn;
+                System.out.println(kursist.getFornavn() + " " + kursist.getEfternavn() + " er oprettet på kurset '" + navn + "' som deltager nr " + tilmeldte + ".");
+                // returBesked = kursist.getFornavn() + " er nu tilmeldt " + navn;
             } else {
-                returBesked = unge.fornavn + " kunne ikke tilmeldes til " + navn + " kursus om" + ugedag + "en, fordi han/hun allerede har en anden tilmeldning for samme ugedag.";
+                returBesked = kursist.fornavn + " kunne ikke tilmeldes til " + navn + " kursus om" + ugedag + "en, fordi han/hun allerede har en anden tilmeldning for samme ugedag.";
             }
         } else {
-            returBesked = unge.fornavn + " kunne ikke tilmeldes til " + navn + " kursus om" + ugedag + "en, fordi der er ikke flere pladser på denne kursus.";
+            returBesked = kursist.fornavn + " kunne ikke tilmeldes til " + navn + " kursus om" + ugedag + "en, fordi der er ikke flere pladser på denne kursus.";
         }
         System.out.println(returBesked);
         return returBesked;

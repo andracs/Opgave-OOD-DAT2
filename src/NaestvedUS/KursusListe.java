@@ -11,4 +11,7 @@ public class KursusListe {
         // System.out.println(kurserArrayList.toString());
     }
 
+    public static ArrayList<Kursus> getKurserArrayList() {
+        return kurserArrayList;
+    }
 }

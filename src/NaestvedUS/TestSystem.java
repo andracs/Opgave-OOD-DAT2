@@ -36,11 +36,12 @@ public class TestSystem {
         System.out.println("Der er " + KursusListe.kurserArrayList.size() + " kurser i systemet. ");
 
         // Opretter brugere
-        Unge mikkel = new Unge("Mikkel", "Sørensen", "1", "1");
-        Unge mads = new Unge("Mads", "Nielsen", "2", "2");
-        Unge thomas = new Unge("Thomas", "Christensen", "3", "3");
-        Unge mathias = new Unge("Mathias", "H", "4", "4");
-        Unge sebastian = new Unge("Sebastian", "N", "5", "5");
+        Kursist mikkel = new Kursist("Mikkel", "Sørensen", "1", "1");
+        Kursist mads = new Kursist("Mads", "Nielsen", "2", "2");
+        Kursist thomas = new Kursist("Thomas", "Christensen", "3", "3");
+        Kursist mathias = new Kursist("Mathias", "H", "4", "4");
+        Kursist sebastian = new Kursist("Sebastian", "N", "5", "5");
+        Kursist andras = new Kursist("András", "Ács", "22957076", "12345");
 
 
         try {

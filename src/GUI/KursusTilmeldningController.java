@@ -1,8 +1,6 @@
 package GUI;
 
-import NaestvedUS.Bruger;
-import NaestvedUS.Main;
-import NaestvedUS.Unge;
+import NaestvedUS.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -23,27 +21,53 @@ public class KursusTilmeldningController {
     @FXML
     private void loginButtonAction() {
         String svarTekst = "";
-        if (telefonInput.getText().matches("22957076") && kodeordInput.getText().matches("12345")) {
-            Main.setCurrentAuthenticatedUser(new Unge("András", "Ács", "22957076", "12345"));
-            Bruger b = Main.getCurrentAuthenticatedUser();
-            svarTekst = "Er logget ind som "+ b.getFornavn().toString()  +  " " ;
-        } else {
-            svarTekst = "Er ikke logget ind med " + telefonInput.getText() + " kode " +  kodeordInput.getText();
+
+        for (Bruger b : KursistListe.getKursisterArrayList()
+                ) {
+            if (telefonInput.getText().matches(b.getTelefon()) && kodeordInput.getText().matches(b.getKodeord())) {
+                Main.setCurrentAuthenticatedUser(b);
+                break;
+            }
+
         }
+
+        if (Main.getCurrentAuthenticatedUser() != null) {
+            svarTekst = "Er logget ind som " + Main.getCurrentAuthenticatedUser().getFornavn().toString() + " ";
+        } 
+
+
+        svarTekst += "\n**************";
+        svarTekst += "\nKursister i systemet:\n";
+
+        for (Bruger b : KursistListe.getKursisterArrayList()
+                ) {
+
+            svarTekst = svarTekst + b.getFornavn() + "\n";
+
+        }
+
+        svarTekst += "\nKurser i systemet:\n";
+
+        for (Kursus k : KursusListe.getKurserArrayList()
+                ) {
+            svarTekst += k.getNavn() + "\n";
+
+        }
+        svarTekst += "**************";
         loginInfoField.appendText(svarTekst + "\n");
     }
 
     @FXML
-    private void udfyldTabelStuderende() {
+    private void udfyldTabelKursister() {
 
         ObservableList<Bruger> data =
                 FXCollections.observableArrayList(
-                        new Unge("Mikkel", "Sørensen", "1", "1"),
-                        new Unge("Mads", "Nielsen", "2", "2"),
-                        new Unge("Thomas", "Christensen", "3", "3"),
-                        new Unge("Mathias", "H", "4", "4"),
-                        new Unge("Sebastian", "N", "5", "5")
-                        );
+                        new Kursist("Mikkel", "Sørensen", "1", "1"),
+                        new Kursist("Mads", "Nielsen", "2", "2"),
+                        new Kursist("Thomas", "Christensen", "3", "3"),
+                        new Kursist("Mathias", "H", "4", "4"),
+                        new Kursist("Sebastian", "N", "5", "5")
+                );
     }
 
 

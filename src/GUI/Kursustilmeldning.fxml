@@ -28,7 +28,7 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab onSelectionChanged="#udfyldTabelStuderende" text="Studerende">
+          <Tab onSelectionChanged="#udfyldTabelKursister" text="Studerende">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
