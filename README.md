@@ -2,7 +2,7 @@
 
 Eksempelløsning af OOD opgaven på DAT 2 semester.
 
-![Løsning screenshot](OpgaveNaestvedUngdomsskole/src/docs/Screen Shot 1.png)
+![Løsning screenshot](https://raw.githubusercontent.com/andracs/OpgaveNaestvedUngdomsskole/master/src/docs/Screen%20Shot%201.png)
 
 ## Kodeeksempler, der hjalp med TableViews
 
