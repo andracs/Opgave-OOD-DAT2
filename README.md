@@ -6,6 +6,10 @@ Eksempelløsning af OOD opgaven på DAT 2 semester.
 
 Se opgavebeskrivelsen [på dette link](https://docs.google.com/document/d/1xlhT_AN9GHiwsaDyqBzBPvZyjY1ZGgsEDLXHXaaGCq4/edit).
 
+## UML
+UML'en kan give et hint af programmets opbygning.
+![UML screenshot](https://raw.githubusercontent.com/andracs/Opgave-OOD-DAT2/master/docs/UML.png)
+
 ## Kodeeksempler, der hjalp med TableViews
 
 [Tableviews tutorial](https://docs.oracle.com/javafx/2/fxml_get_started/fxml_tutorial_intermediate.htm)
