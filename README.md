@@ -1,6 +1,8 @@
-# Opgave - Naestved Ungdomsskole
+# Opgave - OOD Opgave
 
-Eksempelløsning af OOD opgaven på DAT 2 semester. 
+Eksempelløsning af OOD opgaven på DAT 2 semester.
+
+![Løsning screenshot](OpgaveNaestvedUngdomsskole/src/docs/Screen Shot 1.png)
 
 ## Kodeeksempler, der hjalp med TableViews
 
