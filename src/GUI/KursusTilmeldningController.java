@@ -1,6 +1,7 @@
 package GUI;
 
 import NaestvedUS.Bruger;
+import NaestvedUS.Main;
 import NaestvedUS.Unge;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,13 +22,15 @@ public class KursusTilmeldningController {
 
     @FXML
     private void loginButtonAction() {
+        String svarTekst = "";
         if (telefonInput.getText().matches("22957076") && kodeordInput.getText().matches("12345")) {
-            loginInfoField.appendText("Er logget ind");
+            Main.setCurrentAuthenticatedUser(new Unge("András", "Ács", "22957076", "12345"));
+            Bruger b = Main.getCurrentAuthenticatedUser();
+            svarTekst = "Er logget ind som "+ b.getFornavn().toString()  +  " " ;
         } else {
-            loginInfoField.appendText("Er ikke logget ind" + telefonInput.getText() + kodeordInput.getText());
-
+            svarTekst = "Er ikke logget ind med " + telefonInput.getText() + " kode " +  kodeordInput.getText();
         }
-
+        loginInfoField.appendText(svarTekst + "\n");
     }
 
     @FXML

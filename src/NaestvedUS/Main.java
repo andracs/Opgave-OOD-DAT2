@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    protected static Bruger currentAuthenticatedUser = null;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
 
@@ -25,7 +27,15 @@ public class Main extends Application {
         t.init();
 
         // Jeg udkommenterer launch, så GUI'en ikke starter
-         launch(args);
+        launch(args);
 
+    }
+
+    public static Bruger getCurrentAuthenticatedUser() {
+        return currentAuthenticatedUser;
+    }
+
+    public static void setCurrentAuthenticatedUser(Bruger currentAuthenticatedUser) {
+        Main.currentAuthenticatedUser = currentAuthenticatedUser;
     }
 }
