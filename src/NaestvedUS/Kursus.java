@@ -1,5 +1,7 @@
 package NaestvedUS;
 
+import javafx.beans.property.SimpleStringProperty;
+
 public class Kursus {
 
     private String navn;
@@ -11,12 +13,14 @@ public class Kursus {
     private Prøve[] prøve;
     private int maxAntalStuderende = 25;
     private int tilmeldte = 0;
+    private Lokale lokale;
 
     public Kursus(String navn) {
 
         this.navn = navn;
         this.prøve = new Prøve[3];
         kursistArray = new Kursist[25];
+        this.lokale = Lokale.standard();
         KursusListe.add(this);
 
     }
@@ -110,6 +114,38 @@ public class Kursus {
         this.underviser = underviser;
     }
 
+    public Kursist[] getKursistArray() {
+        return kursistArray;
+    }
+
+    public void setKursistArray(Kursist[] kursistArray) {
+        this.kursistArray = kursistArray;
+    }
+
+    public Prøve[] getPrøve() {
+        return prøve;
+    }
+
+    public void setPrøve(Prøve[] prøve) {
+        this.prøve = prøve;
+    }
+
+    public int getTilmeldte() {
+        return tilmeldte;
+    }
+
+    public void setTilmeldte(int tilmeldte) {
+        this.tilmeldte = tilmeldte;
+    }
+
+    public Lokale getLokale() {
+        return lokale;
+    }
+
+    public void setLokale(Lokale lokale) {
+        this.lokale = lokale;
+    }
+
     public int getMaxAntalStuderende() {
         return maxAntalStuderende;
     }
@@ -117,4 +153,18 @@ public class Kursus {
     public void setMaxAntalStuderende(int maxAntalStuderende) {
         this.maxAntalStuderende = maxAntalStuderende;
     }
+
+    public String getLokaleNavn() {
+        return  lokale.getNavn() + " " + lokale.getNummer();
+    }
+
+    public String getUnderviserNavn() {
+        String s;
+        if (underviser != null ) {
+        s = underviser.getFornavn() + " " + underviser.getEfternavn();}
+        else {s = "n/a";}
+        return s;
+    }
+
+
 }

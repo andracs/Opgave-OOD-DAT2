@@ -8,6 +8,11 @@ public class TestSystem {
         // Opretter undervisere
         Underviser karsten = new Underviser("Karsten", "Vandrup", "12345", "1");
 
+        // Opretter lokaler
+        Lokale na108 = new Lokale("EASJ", 108);
+        Lokale na109 = new Lokale("EASJ", 109);
+
+
         // Opretter kurser
         Kursus parkourKursus = new Kursus("Parkour");
         Kursus keramikKursus = new Kursus("Keramik");
@@ -22,6 +27,7 @@ public class TestSystem {
         parkourKursus.setUnderviser(karsten);
         parkourKursus.setStartTime(18);
         parkourKursus.setStartMinut(0);
+        parkourKursus.setLokale(na109);
 
         keramikKursus.setUgedag(EnumUgedage.TIRSDAG);
         keramikKursus.setKursusType(EnumKursusType.VÆRKSTEDSFAG);

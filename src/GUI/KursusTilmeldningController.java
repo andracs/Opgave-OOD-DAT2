@@ -4,10 +4,20 @@ import NaestvedUS.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 
-public class KursusTilmeldningController {
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+public class KursusTilmeldningController implements Initializable {
 
     @FXML
     private TextField kodeordInput;
@@ -17,6 +27,29 @@ public class KursusTilmeldningController {
 
     @FXML
     private TextArea loginInfoField;
+
+    @FXML
+    private AnchorPane kurserAnchorPane;
+    @FXML
+    private TableView<Kursus> kursusTableView;
+    @FXML
+    private TableColumn<Kursus, String> kursusNavnCol;
+    @FXML
+    private TableColumn<Kursus, String> underviserNavnCol;
+    @FXML
+    private TableColumn<Kursus, String> lokaleNavnCol;
+    @FXML
+    private TableColumn<Kursus, String> ugedagCol;
+
+    @FXML
+    private TableView<Kursist> kursistTableView;
+    @FXML
+    private TableColumn<Kursist, String> kursistFornavnCol;
+    @FXML
+    private TableColumn<Kursist, String> kursistEfternavnCol;
+    @FXML
+    private TableColumn<Kursist, String> kursistTilmeldningerCol;
+
 
     @FXML
     private void loginButtonAction() {
@@ -56,6 +89,7 @@ public class KursusTilmeldningController {
             svarTekst = svarTekst + b.getFornavn() + "\n";
 
         }
+        svarTekst += "\n--------------";
 
         svarTekst += "\nKurser i systemet:\n";
 
@@ -68,17 +102,30 @@ public class KursusTilmeldningController {
         loginInfoField.appendText(svarTekst + "\n");
     }
 
-    @FXML
-    private void udfyldTabelKursister() {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        kursusNavnCol.setCellValueFactory(new PropertyValueFactory<Kursus, String>("Navn"));
+        underviserNavnCol.setCellValueFactory(new PropertyValueFactory<Kursus, String>("UnderviserNavn"));
+        lokaleNavnCol.setCellValueFactory(new PropertyValueFactory<Kursus, String>("LokaleNavn"));
+        ugedagCol.setCellValueFactory(new PropertyValueFactory<Kursus, String>("Ugedag"));
+        kursusTableView.getItems().setAll(parseKursusList());
 
-        ObservableList<Bruger> data =
-                FXCollections.observableArrayList(
-                        new Kursist("Mikkel", "Sørensen", "1", "1"),
-                        new Kursist("Mads", "Nielsen", "2", "2"),
-                        new Kursist("Thomas", "Christensen", "3", "3"),
-                        new Kursist("Mathias", "H", "4", "4"),
-                        new Kursist("Sebastian", "N", "5", "5")
-                );
+        kursistFornavnCol.setCellValueFactory(new PropertyValueFactory<Kursist, String>("Fornavn"));
+        kursistEfternavnCol.setCellValueFactory(new PropertyValueFactory<Kursist, String>("Efternavn"));
+        kursistTilmeldningerCol.setCellValueFactory(new PropertyValueFactory<Kursist, String>("Tilmeldninger"));
+
+        kursistTableView.getItems().setAll(parseKursistList());
+
+    }
+
+    private List<Kursus> parseKursusList() {
+        List<Kursus> l = KursusListe.getKurserArrayList();
+        return l;
+    }
+
+    private List<Kursist> parseKursistList() {
+        List<Kursist> l = KursistListe.getKursisterArrayList();
+        return l;
     }
 
 

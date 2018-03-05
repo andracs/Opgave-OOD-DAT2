@@ -36,4 +36,14 @@ public class Kursist extends Bruger {
     public ArrayList<Kursus> getTilmeldtTilKurser() {
         return tilmeldtTilKurser;
     }
+
+    public String getTilmeldninger() {
+        String s = "";
+        for (Kursus k : tilmeldtTilKurser
+             ) {
+            s += k.getNavn() + ", ";
+
+        }
+        return s;
+    }
 }
