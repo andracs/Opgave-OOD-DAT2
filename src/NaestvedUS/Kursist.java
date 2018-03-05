@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class Kursist extends Bruger {
 
     protected String skole;
-    private int klasse;
     protected EnumUgedage[] ugedage = new EnumUgedage[7];
     protected ArrayList<Kursus> tilmeldtTilKurser = new ArrayList<Kursus>();
+    private int klasse;
 
     public Kursist() {
     }
@@ -40,7 +40,7 @@ public class Kursist extends Bruger {
     public String getTilmeldninger() {
         String s = "";
         for (Kursus k : tilmeldtTilKurser
-             ) {
+                ) {
             s += k.getNavn() + ", ";
 
         }

@@ -10,16 +10,6 @@ public class Main extends Application {
 
     protected static Bruger currentAuthenticatedUser = null;
 
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-
-        Parent root = FXMLLoader.load(getClass().getResource("../GUI/Kursustilmeldning.fxml"));
-        primaryStage.setTitle("Kursustilmeldning");
-        primaryStage.setScene(new Scene(root, 800, 600));
-        primaryStage.show();
-
-    }
-
     public static void main(String[] args) {
         System.out.println("***********************************\nVelkommen til Næstved Ungdomsskoles\nadministrationssystem!\n***********************************");
 
@@ -37,5 +27,15 @@ public class Main extends Application {
 
     public static void setCurrentAuthenticatedUser(Bruger currentAuthenticatedUser) {
         Main.currentAuthenticatedUser = currentAuthenticatedUser;
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("../GUI/Kursustilmeldning.fxml"));
+        primaryStage.setTitle("Kursustilmeldning");
+        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.show();
+
     }
 }

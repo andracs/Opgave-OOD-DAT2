@@ -1,7 +1,5 @@
 package NaestvedUS;
 
-import javafx.beans.property.SimpleStringProperty;
-
 public class Kursus {
 
     private String navn;
@@ -155,14 +153,16 @@ public class Kursus {
     }
 
     public String getLokaleNavn() {
-        return  lokale.getNavn() + " " + lokale.getNummer();
+        return lokale.getNavn() + " " + lokale.getNummer();
     }
 
     public String getUnderviserNavn() {
         String s;
-        if (underviser != null ) {
-        s = underviser.getFornavn() + " " + underviser.getEfternavn();}
-        else {s = "n/a";}
+        if (underviser != null) {
+            s = underviser.getFornavn() + " " + underviser.getEfternavn();
+        } else {
+            s = "n/a";
+        }
         return s;
     }
 

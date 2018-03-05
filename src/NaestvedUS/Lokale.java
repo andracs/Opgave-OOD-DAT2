@@ -1,13 +1,20 @@
 package NaestvedUS;
 
 public class Lokale {
+    private static Lokale standard;
     private String navn;
     private int nummer;
-    private static Lokale standard;
 
     public Lokale(String navn, int nummer) {
         this.navn = navn;
         this.nummer = nummer;
+    }
+
+    public static Lokale standard() {
+        if (standard == null) {
+            standard = new Lokale("EASJ", 108);
+        }
+        return standard;
     }
 
     public String getNavn() {
@@ -24,10 +31,5 @@ public class Lokale {
 
     public void setNummer(int nummer) {
         this.nummer = nummer;
-    }
-
-    public static Lokale standard() {
-        if (standard == null) {standard = new Lokale("EASJ", 108);}
-        return standard;
     }
 }
