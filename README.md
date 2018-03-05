@@ -4,6 +4,8 @@ Eksempelløsning af OOD opgaven på DAT 2 semester.
 
 ![Løsning screenshot](https://raw.githubusercontent.com/andracs/OpgaveNaestvedUngdomsskole/master/src/docs/Screen%20Shot%201.png)
 
+Se opgavebeskrivelsen [på dette link](https://docs.google.com/document/d/1xlhT_AN9GHiwsaDyqBzBPvZyjY1ZGgsEDLXHXaaGCq4/edit)
+
 ## Kodeeksempler, der hjalp med TableViews
 
 [Tableviews tutorial](https://docs.oracle.com/javafx/2/fxml_get_started/fxml_tutorial_intermediate.htm)
