@@ -42,7 +42,10 @@ public class TestSystem {
         Kursist mathias = new Kursist("Mathias", "H", "4", "4");
         Kursist sebastian = new Kursist("Sebastian", "N", "5", "5");
         Kursist andras = new Kursist("András", "Ács", "22957076", "12345");
-
+        mikkel.setSkole("EASJ");
+        mikkel.setKlasse(1);
+        andras.setSkole("EASJ");
+        andras.setKlasse(20);
 
         try {
             // Tilmelder kurser

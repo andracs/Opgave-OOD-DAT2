@@ -32,8 +32,19 @@ public class KursusTilmeldningController {
         }
 
         if (Main.getCurrentAuthenticatedUser() != null) {
-            svarTekst = "Er logget ind som " + Main.getCurrentAuthenticatedUser().getFornavn().toString() + " ";
-        } 
+            svarTekst = "Er logget ind som " + Main.getCurrentAuthenticatedUser().getFornavn() + " " + Main.getCurrentAuthenticatedUser().getEfternavn() + " fra skole ";
+            Kursist k = (Kursist) Main.getCurrentAuthenticatedUser();
+            svarTekst += k.getSkole() + "\n";
+            svarTekst += "Klasse:  " + k.getKlasse() + "\n";
+            svarTekst += "Telefon:  " + k.getTelefon() + "\n";
+            svarTekst += "Timeldt til kurser: ";
+            for ( Kursus kursus : k.getTilmeldtTilKurser()
+                 ) {
+                svarTekst += kursus.getNavn() + ", ";
+            }
+            svarTekst += "\n";
+        }
+
 
 
         svarTekst += "\n**************";

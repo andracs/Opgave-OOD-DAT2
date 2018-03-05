@@ -23,7 +23,7 @@
                         <Label layoutX="33.0" layoutY="78.0" text="Kodeord" />
                         <TextField fx:id="kodeordInput" layoutX="90.0" layoutY="73.0" text="12345" />
                         <Button fx:id="loginButton" layoutX="198.0" layoutY="123.0" mnemonicParsing="false" onAction="#loginButtonAction" text="Login" />
-                        <TextArea fx:id="loginInfoField" layoutX="318.0" layoutY="34.0" prefHeight="206.0" prefWidth="335.0" />
+                        <TextArea fx:id="loginInfoField" layoutX="318.0" layoutY="34.0" prefHeight="206.0" prefWidth="449.0" />
                      </children>
                   </AnchorPane>
             </content>

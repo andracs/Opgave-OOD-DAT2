@@ -29,7 +29,6 @@ public class Kursus {
         if ((maxAntalStuderende > tilmeldte)) {
             // Sikre, at der ikke kan tilmeldes til flere aktiviteter på samme ugedag
             // --> Tjek, hvilke kurser (ugedage), den studerende har
-            // --> Hvis der er...
 
             for (Kursus k : KursusListe.kurserArrayList) {
                 // System.out.println("DEBUG Kursusnavn: " + k.navn);
@@ -49,6 +48,7 @@ public class Kursus {
             if (kursist.ugedage[ugedag.ordinal()] == null) {
                 kursist.ugedage[ugedag.ordinal()] = ugedag;
                 kursistArray[tilmeldte] = kursist;
+                kursist.tilmeldtTilKurser.add(this);
                 tilmeldte++;
                 System.out.println(kursist.getFornavn() + " " + kursist.getEfternavn() + " er oprettet på kurset '" + navn + "' som deltager nr " + tilmeldte + ".");
                 // returBesked = kursist.getFornavn() + " er nu tilmeldt " + navn;
